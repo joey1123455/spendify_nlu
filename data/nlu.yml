@@ -1,0 +1,115 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: add_income
+  examples: |
+    - i made [300](amount) through [sales](income_category)
+    - my [rental income](income_category) was [400](amount) on [10-04-2003](date)
+    - i was [gifted](income_category) [20](amount)
+    - my [dividends](income_category) made me [1000](amount)
+    - on [30-12-1999](date) my [intrest income](income_category) on a loan provided me [15000](amount)
+    - [600](amount) was [donated](income_category)
+    - my [salary](income_category) was paid yesterday, a total of [150000](amount)
+    - [1-10-1979](date)
+    - [170000](amount)
+    - [sales](income_category)
+    - i made [300](amount) today
+    - [rental income](income_category)
+    - [09-12-2023](date)
+- intent: add_expense
+  examples: |
+    - i bought a [bag](expense_item) for [200](amount)
+    - [note book](expense_item), [pens](expense_item), [paper](expense_item) it cost me [10](amount), [100](amount), [120](amount)
+    - new [phone](expense_item), i spent [45](expense_amount)
+    - today i bought a [television](expense_item) [17865](amount)
+    - i spent so much today, ive lost track of my goals, i splurged on [nikes](expense_item) for $[89](amount)
+    - i bought a [television](expense_item) a [bench](expense_item) a [shoe](expense_item) and a[ chai]{"entity": "expense_item", "value": "chair"}r
+    - i spent [30](expense_amount) [4000](expense_amount) [45](expense_amount) [23](expense_amount)
+    - i bought a [fan](expense_item) [car](expense_item) [ice cream](expense_item)
+    - i spent [500](expense_amount), [23](expense_amount), [15677](expense_amount)
+    - i bought a [desk](expense_item) for [300](expense_amount), [400](expense_amount) for my [chair](expense_item) and a [bench](expense_item) for [30](expense_amount)
+- synonym: chair
+  examples: |
+    - chai
+    - chai

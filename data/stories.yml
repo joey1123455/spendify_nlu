@@ -1,0 +1,241 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+# - story: assitant
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_help
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: add_expense
+#     entities:
+#     - expense_item: television
+#   - slot_was_set:
+#     - expense_item:
+#       - television
+#   - intent: add_expense
+#     entities:
+#     - expense_item: television
+#     - expense_item: bench
+#     - expense_item: shoe
+#     - expense_item: chair
+#   - action: add_expense_form
+#   - active_loop: add_expense_form
+#   - slot_was_set:
+#     - expense_item:
+#       - television
+#       - bench
+#       - shoe
+#       - chair
+#   - slot_was_set:
+#     - requested_slot: expense_amount
+#   - intent: add_income
+#     entities:
+#     - amount: '800'
+#     - expense_amount: '600'
+#     - expense_amount: '1400'
+#     - expense_amount: '25'
+#   - slot_was_set:
+#     - amount: '800'
+#   - slot_was_set:
+#     - expense_amount:
+#       - '600'
+#       - '1400'
+#       - '25'
+#   - intent: add_expense
+#     entities:
+#     - expense_amount: '800'
+#     - expense_amount: '600'
+#     - expense_amount: '1400'
+#     - expense_amount: '25'
+#   - action: action_default_fallback
+#   - action: utter_ask_add_expense_form_expense_amount
+#   - intent: add_income
+#     entities:
+#     - amount: '56'
+#     - expense_amount: '45'
+#     - expense_amount: '7500'
+#     - expense_amount: '12'
+#   - slot_was_set:
+#     - amount: '56'
+#   - slot_was_set:
+#     - expense_amount:
+#       - '45'
+#       - '7500'
+#       - '12'
+#   - intent: add_expense
+#     entities:
+#     - expense_amount: '56'
+#     - expense_amount: '45'
+#     - expense_amount: '7500'
+#     - expense_amount: '12'
+#   - action: action_default_fallback
+#   - intent: add_income
+#     entities:
+#     - amount: '30'
+#     - expense_amount: '4000'
+#     - expense_amount: '45'
+#     - expense_amount: '23'
+#   - slot_was_set:
+#     - amount: '30'
+#   - slot_was_set:
+#     - expense_amount:
+#       - '4000'
+#       - '45'
+#       - '23'
+#   - intent: add_expense
+#     entities:
+#     - expense_amount: '30'
+#     - expense_amount: '4000'
+#     - expense_amount: '45'
+#     - expense_amount: '23'
+
+# - story: interactive_story_2
+#   steps:
+#   - intent: mood_great
+
+- story: interactive_add_income_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: add_income
+    entities:
+    - amount: '300'
+  - slot_was_set:
+    - amount: '300'
+  - action: add_income_form
+  - active_loop: add_income_form
+  - slot_was_set:
+    - amount: '300'
+  - slot_was_set:
+    - requested_slot: income_category
+  - intent: add_income
+    entities:
+    - income_category: rental income
+  - slot_was_set:
+    - income_category: rental income
+  - action: add_income_form
+  - slot_was_set:
+    - requested_slot: date
+  - intent: add_income
+    entities:
+    - date: 09-12-2023
+  - slot_was_set:
+    - date: 09-12-2023
+  - action: add_income_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_test_income
+
+- story: interactive_add_expense_story_1
+  steps:
+  - intent: add_expense
+    entities:
+    - expense_item: fan
+    - expense_item: car
+    - expense_item: ice cream
+  - action: add_expense_form
+  - active_loop: add_expense_form
+  - slot_was_set:
+    - expense_item:
+      - fan
+      - car
+      - ice cream
+  - slot_was_set:
+    - requested_slot: expense_amount
+  - intent: add_expense
+    entities:
+    - expense_amount: '500'
+    - expense_amount: '23'
+    - expense_amount: '15677'
+  - slot_was_set:
+    - expense_amount:
+      - '500'
+      - '23'
+      - '15677'
+  - action: add_expense_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_expenses_test
+
+- story: interactive_add_expense_story_2
+  steps:
+  # - intent: add_expense
+  #   entities:
+  #   - amount: '500'
+  #   - expense_item: television
+  #   - amount: '50'
+  #   - amount: '4000'
+  # - slot_was_set:
+  #   - amount: '4000'
+  # - slot_was_set:
+  #   - expense_item:
+  #     - television
+  # - intent: add_expense
+  #   entities:
+  #   - amount: '300'
+  #   - amount: '400'
+  #   - expense_item: bench
+  #   - amount: '30'
+  # - slot_was_set:
+  #   - amount: '30'
+  # - slot_was_set:
+  #   - expense_item:
+  #     - bench
+  - intent: add_expense
+    entities:
+    - expense_item: desk
+    - expense_amount: '300'
+    - expense_amount: '400'
+    - expense_item: chair
+    - expense_item: bench
+    - expense_amount: '30'
+  - action: add_expense_form
+  - active_loop: add_expense_form
+  - slot_was_set:
+    - expense_item:
+      - desk
+      - chair
+      - bench
+  - slot_was_set:
+    - expense_amount:
+      - '300'
+      - '400'
+      - '30'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_expenses_test

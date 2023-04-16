@@ -1,0 +1,99 @@
+version: '3.1'
+intents:
+- add_expense
+- add_income
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+entities:
+- expense_item
+- expense_amount
+- date
+- amount
+- income_category
+slots:
+  amount:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: amount
+  income_category:
+    type: categorical
+    values:
+    - salary
+    - sales
+    - dividend
+    - rental income
+    - gift
+    - donation
+    - intrest income
+    mappings:
+    - type: from_entity
+      entity: income_category
+  date:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: date
+  expense_item:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: expense_item
+  expense_amount:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: expense_amount
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_help:
+  - text: Hello! How can i help you today?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_test_income:
+  - text: you have added income of {amount} through {income_category}
+  utter_ask_amount:
+  - text: How much was it?
+  utter_ask_add_income_form_income_category:
+  - text: What was the source of your income?
+  utter_ask_date:
+  - text: Could you specify the date using this format (dd-mm-yyyy).
+  utter_ask_add_expense_form_expense_item:
+  - text: What did you spend money on?
+  utter_ask_add_expense_form_expense_amount:
+  - text: How much did you spend per item?
+  utter_expenses_test:
+  - text: So your expenses were {expense_item} for a total of {expense_amount}
+forms:
+  add_income_form:
+    required_slots:
+    - amount
+    - income_category
+    - date
+  add_expense_form:
+    required_slots:
+    - expense_item
+    - expense_amount
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_expenses_test
+- utter_test_income
+- utter_greet
+- utter_ask_add_expense_form_expense_amount
