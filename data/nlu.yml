@@ -1,5 +1,6 @@
 version: "3.1"
 nlu:
+
 - intent: greet
   examples: |
     - hey
@@ -15,6 +16,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+
 - intent: goodbye
   examples: |
     - cu
@@ -27,6 +29,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
 - intent: affirm
   examples: |
     - yes
@@ -35,6 +38,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+
 - intent: deny
   examples: |
     - no
@@ -44,6 +48,7 @@ nlu:
     - don't like that
     - no way
     - not really
+
 - intent: mood_great
   examples: |
     - perfect
@@ -60,6 +65,7 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -76,12 +82,14 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
 - intent: add_income
   examples: |
     - i made [300](amount) through [sales](income_category)
@@ -97,19 +105,60 @@ nlu:
     - i made [300](amount) today
     - [rental income](income_category)
     - [09-12-2023](date)
+
 - intent: add_expense
   examples: |
     - i bought a [bag](expense_item) for [200](amount)
     - [note book](expense_item), [pens](expense_item), [paper](expense_item) it cost me [10](amount), [100](amount), [120](amount)
-    - new [phone](expense_item), i spent [45](expense_amount)
+    - new [phone](expense_item), i spent [45](amount)
     - today i bought a [television](expense_item) [17865](amount)
     - i spent so much today, ive lost track of my goals, i splurged on [nikes](expense_item) for $[89](amount)
     - i bought a [television](expense_item) a [bench](expense_item) a [shoe](expense_item) and a[ chai]{"entity": "expense_item", "value": "chair"}r
     - i spent [30](expense_amount) [4000](expense_amount) [45](expense_amount) [23](expense_amount)
     - i bought a [fan](expense_item) [car](expense_item) [ice cream](expense_item)
-    - i spent [500](expense_amount), [23](expense_amount), [15677](expense_amount)
-    - i bought a [desk](expense_item) for [300](expense_amount), [400](expense_amount) for my [chair](expense_item) and a [bench](expense_item) for [30](expense_amount)
+    - i spent [500](expense_amount), [23](amount), [15677](expense_amount)
+    - i bought a [desk](expense_item) for [300](amount), [400](amount) for my [chair](expense_item) and a [bench](expense_item) for [30](amount)
+
+- intent: create_budget
+  examples: |
+    - i would like to create a budget of [200](amount) for [food](expense_item)
+    - i'm saving [200](amount), [300](amount), for [bus rides](expense_item) and [coffee](expense_item)
+    - i can't afford to spend more then [67](amount), on [drinks](expense_item) and [1900](amount) for [electricity](expense_item)
+    - my budget for the month is [23](amount), [fuel](expense_item), [4789](amount) for [bread](expense_item)
+    - update my [books](expense_item) budget to [13900](amount) for the next month
+    - i am allocating [300](amount), [34](amount) for [rice](expense_item), [beer](expense_item)
+
 - synonym: chair
   examples: |
     - chai
     - chai
+
+- synonym: food
+  examples: |
+    - rice and stew
+    - ice cream
+    - buiscuits
+    - eggs
+    - garri
+    - beans
+    - take out
+    - restaurants
+    - pizza
+    - cake 
+    - bread
+    - indomie
+    - Provisions
+    - Eats
+    - Refreshments
+    - Diet
+    - Meal
+    - Snack
+    - Edibles
+    - meat
+    - Meat Pie
+    - Roasted Corn
+    - Dodo
+    - Amala and Ewedu Soup
+    - Pepper Soup
+
+

@@ -49,6 +49,7 @@ slots:
     mappings:
     - type: from_entity
       entity: expense_amount
+      
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -79,6 +80,12 @@ responses:
   - text: How much did you spend per item?
   utter_expenses_test:
   - text: So your expenses were {expense_item} for a total of {expense_amount}
+  utter_ask_create_budget_amount:
+  - text: How much would you like to set aside?
+  utter_ask_create_budget_expense_item:
+  - text: What are you budgeting for?
+
+
 forms:
   add_income_form:
     required_slots:
@@ -89,6 +96,7 @@ forms:
     required_slots:
     - expense_item
     - expense_amount
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
