@@ -177,9 +177,9 @@ stories:
     - requested_slot: expense_amount
   - intent: add_expense
     entities:
-    - expense_amount: '500'
-    - expense_amount: '23'
-    - expense_amount: '15677'
+    - amount: '500'
+    - amount: '23'
+    - amount: '15677'
   - slot_was_set:
     - expense_amount:
       - '500'
@@ -218,11 +218,11 @@ stories:
   - intent: add_expense
     entities:
     - expense_item: desk
-    - expense_amount: '300'
-    - expense_amount: '400'
+    - amount: '300'
+    - amount: '400'
     - expense_item: chair
     - expense_item: bench
-    - expense_amount: '30'
+    - amount: '30'
   - action: add_expense_form
   - active_loop: add_expense_form
   - slot_was_set:

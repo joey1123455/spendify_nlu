@@ -43,3 +43,19 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_expenses_test
+
+- rule: add budget
+  steps:
+  - intent: create_budget
+  - action: create_budget_form
+  - active_loop: create_budget_form
+
+- rule: submit budget form
+  condition:
+  - active_loop: create_budget_form
+  steps:
+  - action: create_budget_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_budget_test

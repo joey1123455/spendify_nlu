@@ -160,5 +160,111 @@ nlu:
     - Dodo
     - Amala and Ewedu Soup
     - Pepper Soup
+    - food stuffs
+    - nourishment
+    - chow
+    - lunch
+    - dinner
+    - breakfast
+    - consumables
+    - eatables
+# add more food synonyms 
 
+- synonym: clothing
+  examples: |
+  - clothes
+  - cloth
+  - outfits
+  - outfit
+  - shoes
+  - sneakers
+  - heels
+  - flats
+  - sandals
+  - slipers
+  - boots
+  - trainers
+  - nike airforces
+  - jordans
+  - versace
+  - shits
+  - t-shirt
+  - tee shirt
+  - polo
+  - jeans
+  - jogers
+  - sweat pants
+  - plain trousers
+  - skirts
+  - gucci
+  - leather belts
+  - leather shoes
+  - blouse
+  - gowns
+  - skirts
+  - dresses
+  - body suits
+  - bags
+  - purse
+  - hand bag
+  - shoulder bag
+  - belts
+  - cap
+  - caps
+  - hat
+  - hats
+  - bucket hat
+  - p cap
+# add more clothing synonyms 
 
+- synonym: transportation
+  examples: |
+  - fuel
+  - bus ride
+  - t fare
+  - transport fare
+  - bike fare
+  - bike man
+  - uber
+  - uber fare
+  - cab fare
+  - uber ride
+  - cab ride
+  - cab fare
+  - bolt fare
+  - bolt fee
+  - bus fare
+  - bus ride
+  - bus money
+  - uber money
+  - bolt money
+
+- synonym: rent
+  example: |
+  - Lease
+  - Hire
+  - Let
+  - Tenancy
+  - Occupancy
+  - Rental
+  - Lodging
+  - Accommodation
+  - Residence
+` - Housing
+# Add rental synonyms 
+
+- synonym: Medical
+  example: |
+  - operation
+  - drugs
+  - supplements
+  - Healthcare
+  - Medicine
+  - Remedial
+  - Therapeutic
+  - Clinical
+  - Healing
+  - Pharmaceutical
+  - Curative
+  - Surgical
+  - Paramedical.
