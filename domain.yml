@@ -4,19 +4,18 @@ intents:
 - add_income
 - affirm
 - bot_challenge
+- create_budget
 - deny
 - goodbye
 - greet
 - mood_great
 - mood_unhappy
-- create_budget
-
 entities:
-- expense_item
-# - expense_amount
-- date
-- amount
 - income_category
+- amount
+- expense_item
+- date
+# - additional_details
 slots:
   amount:
     type: float
@@ -61,7 +60,27 @@ slots:
     mappings:
     - type: from_entity
       entity: amount
-
+  income_additional_details:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: add_income_form
+        requested_slot: income_additional_details
+  budget_additional_details:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: create_budget_form
+        requested_slot: budget_additional_details
+  expense_additional_details:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: add_expense_form
+        requested_slot: expense_additional_details
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -79,7 +98,7 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_test_income:
-  - text: you have added income of {amount} through {income_category}
+  - text: you have added income of {amount} through {income_category} {income_additional_details}
   utter_ask_amount:
   - text: How much was it?
   utter_ask_add_income_form_income_category:
@@ -98,7 +117,12 @@ responses:
   - text: What are you budgeting for?
   utter_budget_test:
   - text: So your budget is {budget_item} for a total of {budget_amount}
-
+  utter_ask_income_additional_details:
+  - text: please provide a brief description of your income source
+  utter_ask_budget_additional_details:
+  - text: please provide a brief description of your budget
+  utter_ask_expense_additional_details:
+  - text: please provide a brief description of your expense
 
 forms:
   add_income_form:
@@ -106,20 +130,28 @@ forms:
     - amount
     - income_category
     - date
+    - income_additional_details
   add_expense_form:
     required_slots:
     - expense_item
     - expense_amount
+    - date
+    - expense_additional_details
   create_budget_form:
     required_slots:
     - budget_item
     - budget_amount
+    - date
+    - budget_additional_details
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
+- utter_budget_test
 - utter_expenses_test
-- utter_test_income
 - utter_greet
+- utter_test_income
 - utter_ask_add_expense_form_expense_amount
+- add_income
+- add_expense

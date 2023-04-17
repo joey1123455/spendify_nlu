@@ -27,6 +27,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_test_income
+  - action: add_income
 
 - rule: add expense
   steps:
@@ -43,6 +44,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_expenses_test
+  - action: add_expense
 
 - rule: add budget
   steps:

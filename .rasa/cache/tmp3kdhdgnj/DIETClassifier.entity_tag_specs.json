@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-amount",
+      "2": "I-amount",
+      "3": "L-amount",
+      "4": "U-amount",
+      "5": "B-date",
+      "6": "I-date",
+      "7": "L-date",
+      "8": "U-date",
+      "9": "B-expense_amount",
+      "10": "I-expense_amount",
+      "11": "L-expense_amount",
+      "12": "U-expense_amount",
+      "13": "B-expense_item",
+      "14": "I-expense_item",
+      "15": "L-expense_item",
+      "16": "U-expense_item",
+      "17": "B-income_category",
+      "18": "I-income_category",
+      "19": "L-income_category",
+      "20": "U-income_category",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-amount": 1,
+      "I-amount": 2,
+      "L-amount": 3,
+      "U-amount": 4,
+      "B-date": 5,
+      "I-date": 6,
+      "L-date": 7,
+      "U-date": 8,
+      "B-expense_amount": 9,
+      "I-expense_amount": 10,
+      "L-expense_amount": 11,
+      "U-expense_amount": 12,
+      "B-expense_item": 13,
+      "I-expense_item": 14,
+      "L-expense_item": 15,
+      "U-expense_item": 16,
+      "B-income_category": 17,
+      "I-income_category": 18,
+      "L-income_category": 19,
+      "U-income_category": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

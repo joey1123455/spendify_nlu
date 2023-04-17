@@ -1,6 +1,5 @@
 version: "3.1"
 nlu:
-
 - intent: greet
   examples: |
     - hey
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,7 +27,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -38,7 +35,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -48,7 +44,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -65,7 +60,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -82,14 +76,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: add_income
   examples: |
     - i made [300](amount) through [sales](income_category)
@@ -105,7 +97,7 @@ nlu:
     - i made [300](amount) today
     - [rental income](income_category)
     - [09-12-2023](date)
-
+    - i made [7000](amount) from [salary](income_category)
 - intent: add_expense
   examples: |
     - i bought a [bag](expense_item) for [200](amount)
@@ -119,7 +111,7 @@ nlu:
     - i spent [500](expense_amount), [23](amount), [15677](expense_amount)
     - i bought a [desk](expense_item) for [300](amount), [400](amount) for my [chair](expense_item) and a [bench](expense_item) for [30](amount)
     - i bought [caprison](expense_item) and [cookies](expense_item) in school for [450](amount) naira
-
+    - i spent [500](amount) on [books]{"entity": "expense_item", "value": "Education"} [300](amount) on [tables](income_category) and [70](amount) on [car loan](expense_item)
 - intent: create_budget
   examples: |
     - i would like to create a budget of [200](amount) for [food](expense_item)
@@ -128,19 +120,61 @@ nlu:
     - my budget for the month is [23](amount), [fuel](expense_item), [4789](amount) for [bread](expense_item)
     - update my [books](expense_item) budget to [13900](amount) for the next month
     - i am allocating [300](amount), [34](amount) for [rice](expense_item), [beer](expense_item)
-
-# - intent: add_detail
-#   examples: |
-#     - i am making payments for two chickens
-#     - i spent it on a bag of rice
-
+    - im setting away [400](amount) for light and [500](amount) for tea
+    - budget [500](amount) for [tea](expense_item) and [40](amount) for [light](expense_item)
+    - i would like to save [400](amount) [500](amount) for a [car](expense_item) and [shoe](expense_item)
+    - i would like to save [400](amount) [600](amount) for [car](expense_item) and [fuel]{"entity": "expense_item", "value": "Transportation"}
 - synonym: chair
   examples: |
     - chai
     - chai
-
-
-# List of Synonyms
+- synonym: Education
+  examples: |
+    - books
+    - lessons
+    - school fees
+    - stationeries
+    - stationary
+    - pens
+    - staples
+    - Staplers
+    - Punching Machine
+    - Sticky Tapes
+    - Scissors
+    - Glue
+    - Calculator
+    - Tape Dispenser
+    - Ink Cartridges
+    - Toners
+    - Printing Papers
+    - Photocopy Papers
+    - Notebooks
+    - Wire bound Notebooks
+    - Writing Pads
+    - Personal Organizers
+- synonym: Transportation
+  examples: |
+    - fuel
+    - bus ride
+    - t fare
+    - transport fare
+    - bike fare
+    - bike man
+    - uber
+    - uber fare
+    - cab fare
+    - uber ride
+    - cab ride
+    - bolt fare
+    - bolt fee
+    - bus fare
+    - bus money
+    - uber money
+    - bolt money
+    - flight ticket
+    - plane ticket
+    - flight
+    - plane
 - synonym: Food
   examples: |
     - rice and stew
@@ -152,7 +186,7 @@ nlu:
     - take out
     - restaurants
     - pizza
-    - cake 
+    - cake
     - bread
     - indomie
     - Provisions
@@ -191,6 +225,7 @@ nlu:
     - Hot Chocolate
     - Lemonade
     - Iced Tea
+    - ice tea
     - Energy Drinks
     - Sports Drinks
     - Flavored water
@@ -238,20 +273,13 @@ nlu:
     - Orange Crush
     - Grape Crush
     - Big Red
-    - Coca-Cola
-    - Pepsi
-    - Fanta
-    - Sprite
     - Mirinda
     - Bigi Cola
     - Limca
-    - 7-Up
     - Teem
     - La Casera
-    - Schweppes Tonic Water
     - Maltina
     - Fayrouz
-    - Mountain Dew
     - Schweppes Lemonade
     - Virgin Mojito
     - Ginger Ale
@@ -281,15 +309,12 @@ nlu:
     - Ribena
     - Five Alive
     - Chivita
-    - Zobo
     - Kunu
     - Soy milk
-    - Chapman
     - Bournvita
     - Milo
     - Horlicks
     - Lucozade
-    - Maltina
     - Malta Guinness
     - Puff-puff
     - Akara
@@ -307,7 +332,6 @@ nlu:
     - Roasted groundnuts (Peanuts)
     - Prawn crackers (Kpekere)
     - Guguru (popcorn)
-    - Roasted Corn
     - Kilishi
     - Shawarma
     - Sausage rolls
@@ -394,17 +418,12 @@ nlu:
     - Nutri-C
     - Coco pops
     - Golden nuggets
-    - Oatmeal
     - Alpen
     - Kellogg's Frosties
-    - Rice Krispies
     - All Bran
-    - Cheerios
     - Weetabix
     - Shreddies
     - Crunchy Nut
-    - Bran Flakes
-    - Special K
     - Coco crunch
     - Chex
     - Honey Bunches of Oats
@@ -461,8 +480,6 @@ nlu:
     - Superbite Cookies
     - Golden Crunch Biscuit
     - Digestive Light Biscuits
-# add more food synonyms 
-
 - synonym: Clothing
   examples: |
     - clothes
@@ -494,7 +511,6 @@ nlu:
     - leather shoes
     - blouse
     - gowns
-    - skirts
     - dresses
     - body suits
     - bags
@@ -508,49 +524,35 @@ nlu:
     - hats
     - bucket hat
     - p cap
-# add more clothing synonyms 
-
-- synonym: Transportation
-  examples: |
-    - fuel
-    - bus ride
-    - t fare
-    - transport fare
-    - bike fare
-    - bike man
-    - uber
-    - uber fare
-    - cab fare
-    - uber ride
-    - cab ride
-    - cab fare
-    - bolt fare
-    - bolt fee
-    - bus fare
-    - bus ride
-    - bus money
-    - uber money
-    - bolt money
-    - flight ticket
-    - plane ticket
-    - flight
-    - plane
-# Add more transportaion 
-
-- synonym: Rent
+- synonym: Housing
   examples: |
     - Lease
     - Hire
-    - Let
     - Tenancy
     - Occupancy
-    - Rental
     - Lodging
     - Accommodation
+    - house rent
+    - Letting
+    - Rental agreement
+    - Residency
+    - Use of property
+    - security fee
+    - security levy
+    - improvements
+    - redocoration
+    - decoration
+    - gardening
+    - landscapping
+    - yard maintenance
+    - repairs
+    - home maintenance
+- synonym: Rent
+  examples: |
+    - Let
+    - Rental
     - Residence
     - Housing
-# Add rental synonyms 
-
 - synonym: Medical
   examples: |
     - operation
@@ -579,7 +581,6 @@ nlu:
     - Prescription medications
     - over-the-counter health products
     - Vitamins
-    - supplements
     - Health retreats
     - wellness retreats
     - Dental care
@@ -587,11 +588,9 @@ nlu:
     - chiropractic care
     - Glasses
     - contact lenses
-# add more medical synonyms
-
 - synonym: Utility Bills
   examples: |
-    - light bill 
+    - light bill
     - water bill
     - waste bill
     - electricity
@@ -605,28 +604,28 @@ nlu:
     - light
     - waste
     - airtime
-    - airtel 
+    - airtel
     - mtn
     - glo
     - etisalat
     - 9mobile
-    - Abuja Electricity Distribution Company 
+    - Abuja Electricity Distribution Company
     - AEDC
     - Benin Electricity Distribution Company
     - BEDC
-    - Eko Electricity Distribution Company 
+    - Eko Electricity Distribution Company
     - EKEDC
-    - Enugu Electricity Distribution Company 
+    - Enugu Electricity Distribution Company
     - EEDC
-    - Ibadan Electricity Distribution Company 
+    - Ibadan Electricity Distribution Company
     - IBEDC
-    - Ikeja Electricity Distribution Company 
+    - Ikeja Electricity Distribution Company
     - IKEDC
-    - Jos Electricity Distribution Company 
+    - Jos Electricity Distribution Company
     - JEDC
-    - Kaduna Electricity Distribution Company 
+    - Kaduna Electricity Distribution Company
     - KAEDCO
-    - Kano Electricity Distribution Company 
+    - Kano Electricity Distribution Company
     - KEDCO
     - Port Harcourt Electricity Distribution Company
     - PHEDC
@@ -641,21 +640,19 @@ nlu:
     - VEGEWAY Resources Limited
     - Wastesmart Limited
     - Chanja Datti Limited
-# Add more utility synonyms
-
 - synonym: Sales Expense
   examples: |
     - Selling costs
     - Marketing expenses
     - Advertising expenses
     - Promotion costs
-    - Sales 
+    - Sales
     - marketing expenses
     - Commercial expenses
     - Distribution expenses
     - Customer acquisition costs
     - Lead generation expenses
-    - Sales commissions 
+    - Sales commissions
     - incentives
     - Sales overheads
     - Sales-related costs
@@ -667,72 +664,18 @@ nlu:
     - Sales training and development costs
     - Sales enablement expenses
     - Sales technology expenses
-    - salaries 
+    - salaries
     - wages
-    - bonuses 
-    - incentives
+    - bonuses
     - promotion
     - Sales commission
     - material expenses
     - research expenses
-    - technology 
+    - technology
     - software
     - collateral
     - distribution
     - team training expenses
-# Add more sales expense synonyms
-
-- synonym: Education
-  examples: |
-    - books
-    - lessons
-    - school fees
-    - stationeries
-    - stationary
-    - pens
-    - staples
-    - Staplers
-    - Punching Machine
-    - Sticky Tapes
-    - Scissors
-    - Glue
-    - Calculator
-    - Tape Dispenser
-    - Ink Cartridges
-    - Toners
-    - Printing Papers
-    - Photocopy Papers
-    - Notebooks 
-    - Wire bound Notebooks 
-    - Writing Pads 
-    - Personal Organizers 
-# Add more education synonyms
-
-- synonym: Housing
-  examples: |
-    - house rent
-    - Lease
-    - Letting
-    - Tenancy
-    - Hire
-    - Rental agreement
-    - Occupancy
-    - Lodging
-    - Accommodation
-    - Residency
-    - Use of property
-    - security fee
-    - security levy
-    - improvements
-    - redocoration
-    - decoration
-    - gardening
-    - landscapping
-    - yard maintenance
-    - repairs
-    - home maintenance
-# Add more housing synonyms
-
 - synonym: Sports
   examples: |
     - Balls basketballs
@@ -803,11 +746,8 @@ nlu:
     - Equestrian equipment
     - saddles
     - bridles
-    - helmets
     - jersey
     - soccer boots
-# Add more sports synonyms
-
 - synonym: Debt payments
   examples: |
     - Property tax
@@ -840,7 +780,6 @@ nlu:
     - Clearing
     - Liquidation
     - Discharge
-    - Amortization
     - Redemption
     - Retiring
     - Satisfying
@@ -875,29 +814,13 @@ nlu:
     - Hard money loan
     - Pawn loan
     - Reverse mortgage loan
-    - Medical loan
-    - Vacation loan
-    - Wedding loan
-    - Renovation loan
-    - Boat loan
-    - RV loan
-    - Motorcycle loan
-    - Time-share loan
-    - Green energy loan
-    - Agricultural loan
     - commercial real estate loan
-    - Construction loan
-    - Hard money loan
-    - Pawn loan
-    - Reverse mortgage loan
-# Add more debt synonyms
-
 - synonym: Personal & Discretionary
   examples: |
     - Haircuts and styling
     - Skincare products
     - Skincare treatments
-    - Makeup 
+    - Makeup
     - cosmetics
     - Manicures
     - pedicures
