@@ -240,7 +240,7 @@ nlu:
   - bolt money
 
 - synonym: rent
-  example: |
+  examples: |
   - Lease
   - Hire
   - Let
@@ -254,12 +254,16 @@ nlu:
 # Add rental synonyms 
 
 - synonym: Medical
-  example: |
+  examples: |
   - operation
   - drugs
   - supplements
   - Healthcare
   - Medicine
+  - pills
+  - massage
+  - prescription
+  - treatment
   - Remedial
   - Therapeutic
   - Clinical
@@ -267,4 +271,162 @@ nlu:
   - Pharmaceutical
   - Curative
   - Surgical
-  - Paramedical.
+  - Paramedical
+  - malaria drugs
+  - cough syrup
+  - pain killers
+  - antibiotics
+  - amartem
+  - lonart
+# add more medical synonyms
+
+- synonym: Sales Expense
+  examples: |
+  - Selling costs
+  - Marketing expenses
+  - Advertising expenses
+  - Promotion costs
+  - Sales 
+  - marketing expenses
+  - Commercial expenses
+  - Distribution expenses
+  - Customer acquisition costs
+  - Lead generation expenses
+  - Sales commissions 
+  - incentives
+  - Sales overheads
+  - Sales-related costs
+  - Sales support expenses
+  - Sales operation costs
+  - Sales team expenses
+  - Sales administration expenses
+  - Sales travel and entertainment expenses
+  - Sales training and development costs
+  - Sales enablement expenses
+  - Sales technology expenses
+  - salaries 
+  - wages
+  - bonuses 
+  - incentives
+  - promotion
+  - Sales commission
+  - material expenses
+  - research expenses
+  - technology 
+  - software
+  - collateral
+  - distribution
+  - team training expenses
+
+- synonym: Education
+  examples: |
+  - books
+  - lessons
+  - school fees
+  - stationeries
+  - stationary
+  - pens
+  - staples
+  - Staplers
+  - Punching Machine
+  - Sticky Tapes
+  - Scissors
+  - Glue
+  - Calculator
+  - Tape Dispenser
+  - Ink Cartridges
+  - Toners
+  - Printing Papers
+  - Photocopy Papers
+  - Notebooks 
+  - Wire bound Notebooks 
+  - Writing Pads 
+  - Personal Organizers 
+# Add more education synonyms
+
+- synonym: Housing
+  examples: |
+  - house rent
+  - Lease
+  - Letting
+  - Tenancy
+  - Hire
+  - Rental agreement
+  - Occupancy
+  - Lodging
+  - Accommodation
+  - Residency
+  - Use of property
+
+- synonym: Sports
+  examples: |
+  - Balls basketballs
+  - soccer balls
+  - footballs
+  - tennis balls
+  - golf balls
+  - Bats
+  - baseball bats
+  - cricket bats
+  - Racquets
+  - tennis racquets
+  - badminton racquets
+  - squash racquets
+  - Nets
+  - volleyball nets
+  - tennis nets
+  - badminton nets
+  - Goals
+  - soccer goals
+  - field hockey goals
+  - ice hockey goals
+  - Sticks
+  - field hockey sticks
+  - ice hockey sticks
+  - lacrosse sticks
+  - Paddles
+  - table tennis paddles
+  - canoe paddles
+  - Skis
+  - downhill skis
+  - cross-country skis
+  - Snowboards
+  - Ice skates
+  - Roller skates
+  - Protective gear
+  - helmets
+  - knee pads
+  - elbow pads
+  - shin guards
+  - mouth guards
+  - Gymnastics equipment
+  - balance beams
+  - parallel bars
+  - rings
+  - Climbing gear
+  - ropes
+  - harnesses
+  - carabiners
+  - Water sports equipment
+  - life jackets
+  - snorkels
+  - flippers
+  - surfboards
+  - Exercise equipment
+  - treadmills
+  - weights
+  - resistance bands
+  - exercise balls
+  - Golf clubs
+  - Archery equipment
+  - bows
+  - arrows
+  - Shooting equipment
+  - guns
+  - ammunition
+  - targets
+  - Equestrian equipment
+  - saddles
+  - bridles
+  - helmets
+
