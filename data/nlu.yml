@@ -133,7 +133,9 @@ nlu:
     - chai
     - chai
 
-- synonym: food
+
+# List of Synonyms
+- synonym: Food
   examples: |
     - rice and stew
     - ice cream
@@ -170,7 +172,7 @@ nlu:
     - eatables
 # add more food synonyms 
 
-- synonym: clothing
+- synonym: Clothing
   examples: |
   - clothes
   - cloth
@@ -217,7 +219,7 @@ nlu:
   - p cap
 # add more clothing synonyms 
 
-- synonym: transportation
+- synonym: Transportation
   examples: |
   - fuel
   - bus ride
@@ -238,8 +240,13 @@ nlu:
   - bus money
   - uber money
   - bolt money
+  - flight ticket
+  - plane ticket
+  - flight
+  - plane
+# Add more transportaion 
 
-- synonym: rent
+- synonym: Rent
   examples: |
   - Lease
   - Hire
@@ -278,6 +285,17 @@ nlu:
   - antibiotics
   - amartem
   - lonart
+  - Prescription medications
+  - over-the-counter health products
+  - Vitamins
+  - supplements
+  - Health retreats
+  - wellness retreats
+  - Dental care
+  - Acupuncture care
+  - chiropractic care
+  - Glasses
+  - contact lenses
 # add more medical synonyms
 
 - synonym: Sales Expense
@@ -317,6 +335,7 @@ nlu:
   - collateral
   - distribution
   - team training expenses
+# Add more sales expense synonyms
 
 - synonym: Education
   examples: |
@@ -357,6 +376,7 @@ nlu:
   - Accommodation
   - Residency
   - Use of property
+# Add more housing synonyms
 
 - synonym: Sports
   examples: |
@@ -429,4 +449,103 @@ nlu:
   - saddles
   - bridles
   - helmets
+  - jersey
+  - soccer boots
+# Add more sports synonyms
 
+- synonym: Debt payments
+  examples: |
+  - Property tax
+  - Payroll tax
+  - Corporate tax
+  - Excise tax
+  - Estate tax
+  - Inheritance tax
+  - Capital gains tax
+  - Value-added tax (VAT)
+  - Fuel tax
+  - Luxury tax
+  - Sin tax
+  - Alternative minimum tax (AMT)
+  - Gift tax
+  - Social Security tax
+  - Medicare tax.
+  - Loan repayment
+  - Credit settlement
+  - Debt servicing
+  - Payment of obligations
+  - Clearing debts
+  - Redemption of debt
+  - Amortization
+  - Payment installment
+  - Credit clearance
+  - Paying off debt
+  - Repayment
+  - Settlement
+  - Clearing
+  - Liquidation
+  - Discharge
+  - Amortization
+  - Redemption
+  - Retiring
+  - Satisfying
+  - Fulfilling
+# Add more debt synonyms
+
+- synonym: Personal & Discretionary
+  examples: |
+  - Haircuts and styling
+  - Skincare products
+  - Skincare treatments
+  - Makeup 
+  - cosmetics
+  - Manicures
+  - pedicures
+  - Spa treatments
+  - Gym memberships
+  - fitness classes
+  - Personal training sessions
+  - Yoga classes
+  - meditation classes
+  - Massage therapy
+  - braces
+  - teeth whitening
+  - Dining out at restaurants
+  - movies
+  - movie tickets
+  - concerts
+  - concert tickets
+  - vacations tickets
+  - weekend getaways
+  - amusement parks
+  - museums
+  - Netflix
+  - netflix subscription
+  - Spotify
+  - spotify subscription
+  - Hulu
+  - Hulu subsription
+  - Apple music
+  - Apple music subscription
+  - Amazon Prime Video
+  - Amazon prime video subscriptio
+  - Disney+
+  - disney+ subscription
+  - HBO Max
+  - hbo max subscription
+  - Apple TV+
+  - apple tv+ subscription
+  - Tidal
+  - tidal subscription
+  - Pandora Plus
+  - pandora plus subscription
+  - SiriusXM
+  - SiriusXM subscription
+  - Audible
+  - Audible subscription
+  - Kindle Unlimited
+  - Kindle Unlimited subscription
+  - PlayStation Plus
+  - PlayStation Plus subscription
+  - Xbox Game Pass
+  - Xbox Game Pass subscription
