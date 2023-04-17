@@ -44,8 +44,6 @@ class AddExpenseAction(Action):
         date = tracker.get_slot("date")
         details = tracker.get_slot("expense_additional_details")
         print(item)
-        for i in item:
-            print(i)
         print(expense_amount)
         print(date)
         print(details)
