@@ -1,237 +1,41 @@
 version: "3.1"
 
 stories:
-- story: happy path
+- story: ask help happy path
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+  - action: utter_ask_help
   - intent: affirm
-  - action: utter_happy
+  - action: utter_help
 
-- story: sad path 2
+- story: ask help sad path
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+  - action: utter_ask_help
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_ask_intention
 
-# - story: interactive_add_income_story_1
+# - story: income_form_story
 #   steps:
-#   - intent: greet
-#   - action: utter_greet
 #   - intent: add_income
-#     entities:
-#     - amount: '300'
-#   - slot_was_set:
-#     - amount: '300'
 #   - action: add_income_form
 #   - active_loop: add_income_form
 #   - slot_was_set:
-#     - amount: '300'
+#     - requested_slot: amount
+#   - slot_was_set:
+#     - amount: amount
 #   - slot_was_set:
 #     - requested_slot: income_category
-#   - intent: add_income
-#     entities:
-#     - income_category: rental income
 #   - slot_was_set:
-#     - income_category: rental income
-#   - action: add_income_form
+#     - income_category: inform_income_cat
+#   - slot_was_set:
+#     - requested_slot: additional_details
+#   - slot_was_set:
+#     - additional_details: additional_details
 #   - slot_was_set:
 #     - requested_slot: date
-#   - intent: add_income
-#     entities:
-#     - date: 09-12-2023
 #   - slot_was_set:
-#     - date: 09-12-2023
-#   - action: add_income_form
-#   - slot_was_set:
-#     - requested_slot: null
+#     - date: date
 #   - active_loop: null
-#   - action: utter_test_income
+#   - action: add_income
 
-# - story: interactive_add_expense_story_1
-#   steps:
-#   - intent: add_expense
-#     entities:
-#     - expense_item: fan
-#     - expense_item: car
-#     - expense_item: ice cream
-#   - action: add_expense_form
-#   - active_loop: add_expense_form
-#   - slot_was_set:
-#     - expense_item:
-#       - fan
-#       - car
-#       - ice cream
-#   - slot_was_set:
-#     - requested_slot: expense_amount
-#   - intent: add_expense
-#     entities:
-#     - amount: '500'
-#     - amount: '23'
-#     - amount: '15677'
-#   - slot_was_set:
-#     - expense_amount:
-#       - '500'
-#       - '23'
-#       - '15677'
-#   - action: add_expense_form
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_expenses_test
-
-# - story: interactive_add_expense_story_2
-#   steps:
-#   - intent: add_expense
-#     entities:
-#     - expense_item: desk
-#     - amount: '300'
-#     - amount: '400'
-#     - expense_item: chair
-#     - expense_item: bench
-#     - amount: '30'
-#   - action: add_expense_form
-#   - active_loop: add_expense_form
-#   - slot_was_set:
-#     - expense_item:
-#       - desk
-#       - chair
-#       - bench
-#   - slot_was_set:
-#     - expense_amount:
-#       - '300'
-#       - '400'
-#       - '30'
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_expenses_test
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: create_budget
-    entities:
-    - amount: '400'
-    - amount: '500'
-  - slot_was_set:
-    - amount: '500'
-  - slot_was_set:
-    - expense_amount:
-      - '400'
-      - '500'
-  - slot_was_set:
-    - budget_amount:
-      - '400'
-      - '500'
-  - action: create_budget_form
-  - active_loop: create_budget_form
-  - slot_was_set:
-    - amount: '500'
-  - slot_was_set:
-    - expense_amount:
-      - '400'
-      - '500'
-  - slot_was_set:
-    - budget_amount:
-      - '400'
-      - '500'
-  - slot_was_set:
-    - requested_slot: budget_item
-
-- story: interactive_story_1
-  steps:
-  - intent: create_budget
-    entities:
-    - amount: '400'
-    - amount: '600'
-    - expense_item: car
-    - expense_item: Transportation
-  - slot_was_set:
-    - amount: '600'
-  - slot_was_set:
-    - expense_item:
-      - car
-      - Transportation
-  - slot_was_set:
-    - expense_amount:
-      - '400'
-      - '600'
-  - slot_was_set:
-    - budget_item:
-      - car
-      - Transportation
-  - slot_was_set:
-    - budget_amount:
-      - '400'
-      - '600'
-  - action: create_budget_form
-  - active_loop: create_budget_form
-  - slot_was_set:
-    - amount: '600'
-  - slot_was_set:
-    - expense_item:
-      - car
-      - Transportation
-  - slot_was_set:
-    - expense_amount:
-      - '400'
-      - '600'
-  - slot_was_set:
-    - budget_item:
-      - car
-      - Transportation
-  - slot_was_set:
-    - budget_amount:
-      - '400'
-      - '600'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_budget_test
-
-- story: interactive_story_1
-  steps:
-  - intent: add_income
-    entities:
-    - amount: '7000'
-    - income_category: salary
-  - slot_was_set:
-    - amount: '7000'
-  - slot_was_set:
-    - income_category: salary
-  - slot_was_set:
-    - expense_amount:
-      - '7000'
-  - slot_was_set:
-    - budget_amount:
-      - '7000'
-  - action: add_income_form
-  - active_loop: add_income_form
-  - slot_was_set:
-    - amount: '7000'
-  - slot_was_set:
-    - income_category: salary
-  - slot_was_set:
-    - expense_amount:
-      - '7000'
-  - slot_was_set:
-    - budget_amount:
-      - '7000'
-  - slot_was_set:
-    - requested_slot: date

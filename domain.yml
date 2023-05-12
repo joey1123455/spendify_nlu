@@ -1,19 +1,19 @@
 version: '3.1'
 intents:
-- add_expense
 - add_income
 - affirm
 - bot_challenge
-- create_budget
 - deny
 - goodbye
 - greet
+- inform_income_cat
 - mood_great
-- mood_unhappy
+- mood_unhapp
+- record_amount
+- record_date
 entities:
-- income_category
 - amount
-- expense_item
+- income_category
 - date
 # - additional_details
 slots:
@@ -25,13 +25,13 @@ slots:
   income_category:
     type: categorical
     values:
-    - salary
-    - sales
-    - dividend
-    - rental income
-    - gift
-    - donation
-    - intrest income
+    - Salary
+    - Sales
+    - Dividend
+    - Rental
+    - Gift
+    - Donation
+    - Intrest
     mappings:
     - type: from_entity
       entity: income_category
@@ -40,52 +40,16 @@ slots:
     mappings:
     - type: from_entity
       entity: date
-  expense_item:
-    type: list
-    mappings:
-    - type: from_entity
-      entity: expense_item
-  expense_amount:
-    type: list
-    mappings:
-    - type: from_entity
-      entity: amount
-  budget_item:
-    type: list
-    mappings:
-    - type: from_entity
-      entity: expense_item
-  budget_amount:
-    type: list
-    mappings:
-    - type: from_entity
-      entity: amount
-  income_additional_details:
+  additional_details:
     type: text
     mappings:
     - type: from_text
       conditions:
       - active_loop: add_income_form
-        requested_slot: income_additional_details
-  budget_additional_details:
-    type: text
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: create_budget_form
-        requested_slot: budget_additional_details
-  expense_additional_details:
-    type: text
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: add_expense_form
-        requested_slot: expense_additional_details
+        requested_slot: additional_details
 responses:
   utter_greet:
   - text: Hey! How are you?
-  utter_help:
-  - text: Hello! How can i help you today?
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -97,61 +61,40 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_test_income:
-  - text: you have added income of {amount} through {income_category} {income_additional_details}
+  utter_ask_help:
+  - text: Hello i am your personal Spendify assistant, would you like to know my capabilities
+  utter_help:
+  - text: I can be used to log expenses, create budgets, track budgets and record income. If you wold like to perform any of the actions just specify your intent by responding with a message structured like this "I would like to record my (income/expenses)" or "I want to create a budget".
+  utter_ask_intention:
+  - text: What would you like to do today? Your options are create a budget or reminder, record expenses or income.
+  utter_ask_income:
+  - text: Whats the category of your income?
+  - text: How did you get paid?
+  utter_ask_income_category:
+  - text: Pick an income source from these categories [Salary, Sales, Dividend, Rental Income, Gift/Donations, Intrest Income, Other Incomes].
+  utter_ask_category:
+  - text: The categories are []
   utter_ask_amount:
   - text: How much was it?
-  utter_ask_add_income_form_income_category:
-  - text: What was the source of your income?
+  - text: What was the amount?
   utter_ask_date:
   - text: Could you specify the date using this format (dd-mm-yyyy).
-  utter_ask_add_expense_form_expense_item:
-  - text: What did you spend money on?
-  utter_ask_add_expense_form_expense_amount:
-  - text: How much did you spend per item?
-  utter_expenses_test:
-  - text: So your expenses were {expense_item} for a total of {expense_amount}
-  utter_ask_create_budget_form_budget_amount:
-  - text: How much would you like to set aside?
-  utter_ask_create_budget_form_budget_item:
-  - text: What are you budgeting for?
-  utter_budget_test:
-  - text: So your budget is {budget_item} for a total of {budget_amount}
-  utter_ask_income_additional_details:
-  - text: please provide a brief description of your income source
-  utter_ask_budget_additional_details:
-  - text: please provide a brief description of your budget
-  utter_ask_expense_additional_details:
-  - text: please provide a brief description of your expense
-
+  utter_ask_additional_details:
+  - text: Please provide a brief description.
+  utter_test_income:
+  - text: you have added income of {amount} through {income_category} {additional_details}
 forms:
   add_income_form:
     required_slots:
     - amount
     - income_category
     - date
-    - income_additional_details
-  add_expense_form:
-    required_slots:
-    - expense_item
-    - expense_amount
-    - date
-    - expense_additional_details
-  create_budget_form:
-    required_slots:
-    - budget_item
-    - budget_amount
-    - date
-    - budget_additional_details
+    - additional_details
 
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
 actions:
-- utter_budget_test
-- utter_expenses_test
-- utter_greet
-- utter_test_income
-- utter_ask_add_expense_form_expense_amount
+- utter_ask_intention
+- utter_ask_help
 - add_income
-- add_expense
