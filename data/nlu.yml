@@ -86,20 +86,165 @@ nlu:
   examples: |
     - My income category is [Sales](income_category)
     - Made money through stock [Dividend](income_category)
-    - i was given a [Gift/Donation](income_category) today
+    - i was given a [Gift](income_category) today
     - [Gift/Donation](income_category)
-    - I'm a retiree, and my income category is [rental Income](income_category).
+    - I'm a retiree, and my income category is [rental](income_category).
     - I'm a small business owner, and my income category is [Sales](income_category).
-    - I own a vacation home, and I make money through [rental Income](income_category)
-    - [Rental Income](income_category)
-    - [Intrest Income](income_category)
+    - I own a vacation home, and I make money through [rental](income_category)
+    - [Rental](income_category)
+    - [Intrest](income_category)
     - [Salary](income_category)
     - [Dividend](income_category)
     - [Sales](income_category)
-    - I'm a credit card company, and I make money through [Intrest Income](income_category).
+    - [sales](income_category)
+    - I'm a credit card company, and I make money through [Intrest](income_category).
     - I'm a mutual fund investor, and I make money through [Dividend](income_category)
     - I was paid [Salary](income_category)
-    - i was paid [Intrest Income](income_category)
+    - i was paid [Intrest](income_category)
+- intent: create_budget
+  examples: |
+    - i am saving money for [Transportation](category)
+    - i am saving money for [Sales](category)
+    - i am saving money for [Rent](category)
+    - i am saving money for [Food](category)
+    - i am saving money for [Medical](category)
+    - i am saving money for [Utility](category)
+    - i am saving money for [Clothing](category)
+    - i am saving money for [Sports](category)
+    - i am saving money for [Miscellaneous](category)
+    - i am saving money for [Debt](category)
+    - i am saving money for [Housing](category)
+    - budget for [Sales](category)
+    - I'm saving up for a [Education](category)
+    - [Education](category)
+    - [Housing](category)
+    - [Debt](category)
+    - [Miscellaneous](category)
+    - [Sports](category)
+    - [Clothing](category)
+    - [Utility](category)
+    - [Medical](category)
+    - [Food](category)
+    - [Rent](category)
+    - [Sales](category)
+    - [Transportation](category)
+    - I'm creating a [food](category) for my monthly expenses
+    - I'm creating a [education](category) for my monthly expenses
+    - I'm creating a [debt](category) for my monthly expenses
+    - I'm creating a [miscellaneous](category) for my monthly expenses
+    - I'm creating a [sports](category) for my monthly expenses
+    - I'm creating a [clothing](category) for my monthly expenses
+    - I'm creating a [utility](category) for my monthly expenses
+    - I'm creating a [medical](category) for my monthly expenses
+    - I'm creating a [rent](category) for my monthly expenses
+    - I'm creating a [transportation](category) for my monthly expenses
+    - I'm creating a [sales](category) for my monthly expenses
+    - make a budget for [sales](category)
+    - make a budget for [transportation](category)
+    - make a budget for [rent](category)
+    - make a budget for [medical](category)
+    - make a budget for [utility](category)
+    - make a budget for [clothing](category)
+    - make a budget for [sports](category)
+    - make a budget for [miscellaneous](category)
+    - make a budget for [debt](category)
+    - make a budget for [education](category)
+    - make a budget for [food](category)
+    - create a budget for [sales](category)
+    - create a budget for [transportation](category)
+    - create a budget for [rent](category)
+    - create a budget for [medical](category)
+    - create a budget for [utility](category)
+    - create a budget for [clothing](category)
+    - create a budget for [sports](category)
+    - create a budget for [miscellaneous](category)
+    - create a budget for [debt](category)
+    - create a budget for [education](category)
+    - create a budget for [food](category)
+    - I have to budget for [sales](category)
+    - I have to budget for [transportation](category)
+    - I have to budget for [rent](category)
+    - I have to budget for [medical](category)
+    - I have to budget for [utility](category)
+    - I have to budget for [clothing](category)
+    - I have to budget for [sports](category)
+    - I have to budget for [miscellaneous](category)
+    - I have to budget for [debt](category)
+    - I have to budget for [education](category)
+    - I have to budget for [food](category)
+    - I need to budget for [sales](category)
+    - I need to budget for [transportation](category)
+    - I need to budget for [rent](category)
+    - I need to budget for [medical](category)
+    - I need to budget for [utility](category)
+    - I need to budget for [clothing](category)
+    - I need to budget for [sports](category)
+    - I need to budget for [miscellaneous](category)
+    - I need to budget for [debt](category)
+    - I need to budget for [education](category)
+    - I need to budget for [food](category)
+    - I would like to budget for [sales](category)
+    - I would like to budget for [transportation](category)
+    - I would like to budget for [rent](category)
+    - I would like to budget for [medical](category)
+    - I would like to budget for [utility](category)
+    - I would like to budget for [clothing](category)
+    - I would like to budget for [sports](category)
+    - I would like to budget for [miscellaneous](category)
+    - I would like to budget for [debt](category)
+    - I would like to budget for [education](category)
+    - I would like to budget for [food](category)
+    - im budgeting for [sales](category)
+    - im budgeting for [transportation](category)
+    - im budgeting for [rent](category)
+    - im budgeting for [medical](category)
+    - im budgeting for [utility](category)
+    - im budgeting for [clothing](category)
+    - im budgeting for [sports](category)
+    - im budgeting for [miscellaneous](category)
+    - im budgeting for [debt](category)
+    - im budgeting for [education](category)
+    - im budgeting for [food](category)
+    - I'm setting a budget for [sales](category) budget to avoid overspending on it
+    - I'm setting a budget for [transportation](category) budget to avoid overspending on it
+    - I'm setting a budget for [rent](category) budget to avoid overspending on it
+    - I'm setting a budget for [medical](category) budget to avoid overspending on it
+    - I'm setting a budget for [utility](category) budget to avoid overspending on it
+    - I'm setting a budget for [clothing](category) budget to avoid overspending on it
+    - I'm setting a budget for [sports](category) budget to avoid overspending on it
+    - I'm setting a budget for [miscellaneous](category) budget to avoid overspending on it
+    - I'm setting a budget for [debt](category) budget to avoid overspending on it
+    - I'm setting a budget for [education](category) budget to avoid overspending on it
+    - I'm setting a budget for [food](category) budget to avoid overspending on it
+- intent: add_expense
+  examples: |
+    - register expense
+    - log expense
+    - write my spending for the 
+    - i spent [1](amount) on [sales](category) today
+    - i spent [678](amount) on [transportation](category) today
+    - i spent [2354](amount) on [rent](category) today
+    - i spent [890087](amount) on [medical](category) today
+    - i spent [56784](amount) on [utility](category) today
+    - i spent [56789](amount) on [clothing](category) today
+    - i spent [56704](amount) on [sports](category) today
+    - i spent [56784](amount) on [miscellaneous](category) today
+    - i spent [56789](amount) on [debt](category) today
+    - i spent [784](amount) on [education](category) today
+    - i spent [445333](amount) on [food](category) today
+    - i bought bags shoes and clothes today
+    - i bought a car and 
+    - i would like to record my expenses for today
+    - i bought electricity
+    - i paid the water bill and electricity
+    - i paid for my diabetes medicine
+    - i bought malaria drugs
+    - i brought typhoid and high blood pressure meds
+    - i paid my house loan
+    - i paid my school fees
+    - i spent money on house rent
+    - personal purchase
+
 - intent: add_income
   examples: |
     - record income
@@ -140,3 +285,33 @@ nlu:
     - my tenant paid me[675947](amount)
     - [35674](amount)
     - [500](amount)
+- intent: request_budget
+  examples: |
+    - i would like to know my budgets
+    - show me my budgets 
+    - what have i budgeted
+    - whats the budget for [transportation](category)
+    - whats the budget for [sports](category)
+    - whats the budget for [miscellaneous](category)
+    - whats the budget for [transportation](category)
+    - whats the budget for [food](category)
+    - what have i budgeted for [utility](category)
+    - what have i budgeted for [sales](category)
+    - what have i budgeted for [transportation](category)
+    - what have i budgeted for [rent](category)
+    - what have i budgeted for [medical](category)
+    - what have i budgeted for [clothing](category)
+    - what have i budgeted for [sports](category)
+    - what have i budgeted for [miscellaneous](category)
+    - what have i budgeted for [education](category)
+    - what have i budgeted for [food](category)
+    - show me my budget for [utility](category)
+    - show me my budget for [sales](category)
+    - show me my budget for [transportation](category)
+    - show me my budget for [rent](category)
+    - show me my budget for [medical](category)
+    - show me my budget for [clothing](category)
+    - show me my budget for [sports](category)
+    - show me my budget for [miscellaneous](category)
+    - show me my budget for [education](category)
+    - show me my budget for [food](category)

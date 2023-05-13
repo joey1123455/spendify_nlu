@@ -1,22 +1,24 @@
-from . helper_functions import validate_items_data
+from . helper_functions import validate_category, validate_income, gen_details
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
 class AddIncomeAction(Action):
 
     def name(self) -> Text:
-        return "add_income"
+        return "add_income_action"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         income = tracker.get_slot("amount")
-        source = tracker.get_slot("income_category")
+        raw_source = tracker.get_slot("income_category")
         date = tracker.get_slot("date")
-        details = tracker.get_slot("additional_details")
         current_state = tracker.current_state()
         sender = current_state["sender_id"]
+        source = validate_income(raw_source)
+        details = gen_details(income, source, date, 'Income')
         context = {
             "sender_id": sender,
             "intent": "add income",
@@ -25,21 +27,22 @@ class AddIncomeAction(Action):
             "date": date,
             "additional_details": details
         }
-        return []
+        print(context)
+        return [SlotSet("income_category", None), SlotSet("amount", None), SlotSet("date", None)]
 
 class AddExpenseAction(Action):
 
     def name(self) -> Text:
-        return "add_expense"
+        return "add_expense_action"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        raw_item_list = tracker.get_slot("expense_item")
-        item = validate_items_data(raw_item_list)
-        expense_amount = tracker.get_slot("expense_amount")
+        raw_item = tracker.get_slot("category")
+        expense_amount = tracker.get_slot("amount")
         date = tracker.get_slot("date")
-        details = tracker.get_slot("additional_details")
+        item = validate_category(raw_item)
+        details = gen_details(expense_amount, item, date, 'Expense')
         current_state = tracker.current_state()
         sender = current_state["sender_id"]
         context = {
@@ -51,23 +54,21 @@ class AddExpenseAction(Action):
             "additional_details": details
         }
         print(context)
-        print('hi')
-        print(tracker.latest_message['entities'])
-        print(tracker.current_state())
-        return []
+        return [SlotSet("category", None), SlotSet("amount", None), SlotSet("date", None)]
 
 class CreateBudgetAction(Action):
 
     def name(self) -> Text:
-        return "create_budget"
+        return "create_budget_action"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        item = tracker.get_slot("budget_item")
-        budget_amount = tracker.get_slot("budget_amount")
+        raw_item = tracker.get_slot("category")
+        item = validate_category(raw_item)
+        budget_amount = tracker.get_slot("amount")
         date = tracker.get_slot("date")
-        details = tracker.get_slot("additional_details")
+        details = gen_details(budget_amount, item, date, 'Budget')
         current_state = tracker.current_state()
         sender = current_state["sender_id"]
         context = {
@@ -78,4 +79,5 @@ class CreateBudgetAction(Action):
             "date": date,
             "additional_details": details
         }
-        return []
+        print(context)
+        return [SlotSet("category", None), SlotSet("amount", None), SlotSet("date", None)]
