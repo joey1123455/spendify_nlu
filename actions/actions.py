@@ -14,6 +14,7 @@ class AddIncomeAction(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         income = tracker.get_slot("amount")
         raw_source = tracker.get_slot("income_category")
+        raw_source = raw_source.title()
         date = tracker.get_slot("date")
         current_state = tracker.current_state()
         sender = current_state["sender_id"]
@@ -21,7 +22,7 @@ class AddIncomeAction(Action):
         details = gen_details(income, source, date, 'Income')
         context = {
             "sender_id": sender,
-            "intent": "add income",
+            "intent": "add_income",
             "amount": income,
             "category": source,
             "date": date,
@@ -39,6 +40,7 @@ class AddExpenseAction(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         raw_item = tracker.get_slot("category")
+        raw_item = raw_item.title()
         expense_amount = tracker.get_slot("amount")
         date = tracker.get_slot("date")
         item = validate_category(raw_item)
@@ -47,7 +49,7 @@ class AddExpenseAction(Action):
         sender = current_state["sender_id"]
         context = {
             "sender_id": sender,
-            "intent": "add expense",
+            "intent": "add_expense",
             "amount": expense_amount,
             "category": item,
             "date": date,
@@ -65,6 +67,7 @@ class CreateBudgetAction(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         raw_item = tracker.get_slot("category")
+        raw_item = raw_item.title()
         item = validate_category(raw_item)
         budget_amount = tracker.get_slot("amount")
         date = tracker.get_slot("date")
@@ -81,3 +84,53 @@ class CreateBudgetAction(Action):
         }
         print(context)
         return [SlotSet("category", None), SlotSet("amount", None), SlotSet("date", None)]
+
+
+class QueryBudgetAction(Action):
+
+    def name(self) -> Text:
+        return "request_budget_action"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        raw_item = tracker.get_slot("category")
+        item = validate_category(raw_item)
+        all_items = False
+        if item == None:
+            all_items = True
+        current_state = tracker.current_state()
+        sender = current_state["sender_id"]
+        context = {
+            "sender_id": sender,
+            "intent": "querry_budget",
+            "category": item,
+            "all_categories": all_items,
+        }
+        print(context)
+        return [SlotSet("category", None),]
+
+
+class QueryExpenseAction(Action):
+
+    def name(self) -> Text:
+        return "request_expense_action"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        raw_item = tracker.get_slot("category")
+        item = validate_category(raw_item)
+        all_items = False
+        if item == None:
+            all_items = True
+        current_state = tracker.current_state()
+        sender = current_state["sender_id"]
+        context = {
+            "sender_id": sender,
+            "intent": "querry_expense",
+            "category": item,
+            "all_categories": all_items,
+        }
+        print(context)
+        return [SlotSet("category", None),]

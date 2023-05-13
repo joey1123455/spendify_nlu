@@ -38,9 +38,9 @@ def validate_category(item):
     @incomp: a list of expected incomplete categories.
     
     returns: the completed category'''
-    incomp = ['Sales', 'Utility', 'Personal', 'Debt']
+    incomp = ['Business', 'Utility', 'Personal', 'Debt']
     if item in incomp:
-        if item == 'Sales':
+        if item == 'Business':
             item = 'Sales Expense'
             return item
         elif item == 'Utility':

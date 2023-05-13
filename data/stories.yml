@@ -15,27 +15,14 @@ stories:
   - intent: deny
   - action: utter_ask_intention
 
-# - story: income_form_story
-#   steps:
-#   - intent: add_income
-#   - action: add_income_form
-#   - active_loop: add_income_form
-#   - slot_was_set:
-#     - requested_slot: amount
-#   - slot_was_set:
-#     - amount: amount
-#   - slot_was_set:
-#     - requested_slot: income_category
-#   - slot_was_set:
-#     - income_category: inform_income_cat
-#   - slot_was_set:
-#     - requested_slot: additional_details
-#   - slot_was_set:
-#     - additional_details: additional_details
-#   - slot_was_set:
-#     - requested_slot: date
-#   - slot_was_set:
-#     - date: date
-#   - active_loop: null
-#   - action: add_income
+# ITS CONFUSING MY MODEL
 
+# - story: querry_budget
+#   steps:
+#   - intent: request_budget
+#   - action: request_budget_action
+
+# - story: querry_expense
+#   steps:
+#   - intent: request_expenses
+#   - action: request_expense_action

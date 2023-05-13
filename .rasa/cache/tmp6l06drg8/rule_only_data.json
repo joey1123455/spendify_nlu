@@ -1,0 +1,8 @@
+{
+  "rule_only_slots": [],
+  "rule_only_loops": [
+    "create_budget_form",
+    "add_expense_form",
+    "add_income_form"
+  ]
+}

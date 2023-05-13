@@ -10,9 +10,10 @@ intents:
 - greet
 - inform_income_cat
 - mood_great
-- mood_unhapp
 - record_amount
 - record_date
+- request_expenses
+- request_budget
 entities:
 - amount
 - income_category
@@ -41,7 +42,7 @@ slots:
     type: categorical
     values:
     - Transportation
-    - Sales
+    - Business
     - Rent
     - Food
     - Medical
@@ -94,7 +95,7 @@ responses:
   utter_ask_income_category:
   - text: Pick an income source from these categories [Salary, Sales, Dividend, Rental Income, Gift, Donations, Intrest Income, Other Incomes].
   utter_ask_category:
-  - text: The categories are [Transportation, Sales, Rent, Food, Medical, Utility, Clothing, Sports, Education, Housing, Debt, Personal, Miscellaneous].
+  - text: The categories are [Transportation, Business, Rent, Food, Medical, Utility, Clothing, Sports, Education, Housing, Debt, Personal, Miscellaneous].
   utter_ask_amount:
   - text: How much is it, please specify the total amount for this category using numerical digits an example would be 1000?
   - text: What is the amount please specify the total amount for this category using numerical digits an example would be 54690?
@@ -141,3 +142,5 @@ actions:
 - add_income_action
 - add_expense_action
 - create_budget_action
+# - request_budget_action
+# - request_expense_action
