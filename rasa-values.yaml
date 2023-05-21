@@ -1,0 +1,4 @@
+rasa-action-server:
+  external:
+    enabled: true
+    url: "http://rasa-action-server/webhook"

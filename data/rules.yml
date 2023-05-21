@@ -1,0 +1,65 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: add income 
+  steps:
+  - intent: add_income
+  - action: add_income_form
+  - active_loop: add_income_form
+
+- rule: submit income form
+  condition:
+  - active_loop: add_income_form
+  steps:
+  - action: add_income_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_test_income
+  - action: add_income_action
+
+- rule: add expense
+  steps:
+  - intent: add_expense
+  - action: add_expense_form
+  - active_loop: add_expense_form
+
+- rule: submit expense form
+  condition:
+  - active_loop: add_expense_form
+  steps:
+  - action: add_expense_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_test_add_expenses
+  - action: add_expense_action
+
+
+- rule: add budget
+  steps:
+  - intent: create_budget
+  - action: create_budget_form
+  - active_loop: create_budget_form
+
+- rule: submit budget form
+  condition:
+  - active_loop: create_budget_form
+  steps:
+  - action: create_budget_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_test_create_budget
+  - action: create_budget_action

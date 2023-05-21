@@ -1,0 +1,22 @@
+version: '3.0'
+services:
+  rasa:
+    image: rasa/rasa:3.5.8-full
+    ports:
+      - 5005:5005
+    volumes:
+      - ./:/app
+    command: run
+  # action-server:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./actions:/app/actions
+  #   ports:
+  #     - 5055:5055
+  #   # command: run actions/actions.py
+  app:
+    image: folayanjoey/spendify-action_server:1.0
+    expose:
+      - 5055

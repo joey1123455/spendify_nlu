@@ -1,0 +1,28 @@
+version: "3.1"
+
+stories:
+- story: ask help happy path
+  steps:
+  - intent: greet
+  - action: utter_ask_help
+  - intent: affirm
+  - action: utter_help
+
+- story: ask help sad path
+  steps:
+  - intent: greet
+  - action: utter_ask_help
+  - intent: deny
+  - action: utter_ask_intention
+
+# ITS CONFUSING MY MODEL
+
+# - story: querry_budget
+#   steps:
+#   - intent: request_budget
+#   - action: request_budget_action
+
+# - story: querry_expense
+#   steps:
+#   - intent: request_expenses
+#   - action: request_expense_action

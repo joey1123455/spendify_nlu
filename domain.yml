@@ -1,0 +1,146 @@
+version: '3.1'
+intents:
+- add_income
+- create_budget
+- add_expense
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- inform_income_cat
+- mood_great
+- record_amount
+- record_date
+- request_expenses
+- request_budget
+entities:
+- amount
+- income_category
+- date
+- category
+slots:
+  amount:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: amount
+  income_category:
+    type: categorical
+    values:
+    - Salary
+    - Sales
+    - Dividend
+    - Rental
+    - Gift
+    - Donation
+    - Intrest
+    mappings:
+    - type: from_entity
+      entity: income_category
+  category:
+    type: categorical
+    values:
+    - Transportation
+    - Business
+    - Rent
+    - Food
+    - Medical
+    - Utility
+    - Clothing
+    - Sports
+    - Education
+    - Housing
+    - Debt
+    - Personal
+    - Miscellaneous
+    mappings:
+    - type: from_entity
+      entity: category
+  date:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: date
+  # additional_details:
+  #   type: text
+  #   mappings:
+  #   - type: from_text
+  #     conditions:
+  #     - active_loop: add_income_form
+  #       requested_slot: additional_details
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am Leom, powered by Rasa.
+  utter_ask_help:
+  - text: Hello i am your personal Spendify assistant, would you like to know my capabilities
+  utter_help:
+  - text: I can be used to log expenses, create budgets, track budgets and record income. If you would like to perform any of these actions just specify your intent by responding with a message structured like this "I would like to record my (income/expenses)" or "I want to (create/track) a budget".
+  utter_ask_intention:
+  - text: What would you like to do today? Your options are create a budget or reminder, record expenses or income.
+  utter_ask_income:
+  - text: Whats the category of your income? Please specify a single category.
+  - text: How did you get paid? Please specify a single category.
+  utter_ask_income_category:
+  - text: Pick an income source from these categories [Salary, Sales, Dividend, Rental Income, Gift, Donations, Intrest Income, Other Incomes].
+  utter_ask_category:
+  - text: The categories are [Transportation, Business, Rent, Food, Medical, Utility, Clothing, Sports, Education, Housing, Debt, Personal, Miscellaneous].
+  utter_ask_amount:
+  - text: How much is it, please specify the total amount for this category using numerical digits an example would be 1000?
+  - text: What is the amount please specify the total amount for this category using numerical digits an example would be 54690?
+  utter_ask_date:
+  - text: Could you specify the date using this format (dd-mm-yyyy).
+  utter_ask_additional_details:
+  - text: Please provide a brief description.
+  utter_perform_another_transaction:
+  - text: Would you like to perform another transaction?
+  utter_what_else:
+  - text: What else would you like to do?
+  utter_test_income:
+  - text: you have added income of {amount} through {income_category}.
+  utter_test_create_budget:
+  - text: you have added a budget of {amount} for {category}.
+  utter_test_add_expenses:
+  - text: you spent {amount} on {category}.
+forms:
+  add_income_form:
+    required_slots:
+    - amount
+    - income_category
+    - date
+    # - additional_details
+  add_expense_form:
+    required_slots:
+    - amount
+    - category
+    - date
+    # - additional_details
+  create_budget_form:
+    required_slots:
+    - amount
+    - category
+    - date
+    # - additional_details
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+actions:
+- utter_ask_intention
+- utter_ask_help
+- add_income_action
+- add_expense_action
+- create_budget_action
+# - request_budget_action
+# - request_expense_action
