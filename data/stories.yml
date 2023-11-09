@@ -15,14 +15,3 @@ stories:
   - intent: deny
   - action: utter_ask_intention
 
-# ITS CONFUSING MY MODEL
-
-# - story: querry_budget
-#   steps:
-#   - intent: request_budget
-#   - action: request_budget_action
-
-# - story: querry_expense
-#   steps:
-#   - intent: request_expenses
-#   - action: request_expense_action
